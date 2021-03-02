@@ -1,6 +1,5 @@
-package com.okawa.blockchain.mkt.di
+package com.okawa.blockchain.app.data
 
-import com.okawa.blockchain.mkt.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import dagger.Module
@@ -16,7 +15,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ApiModule {
+class NetworkModule {
 
     @Singleton
     @Provides

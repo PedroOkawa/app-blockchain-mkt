@@ -6,6 +6,7 @@
       <module name="app-blockchain-mkt.app.data" target="1.8" />
       <module name="app-blockchain-mkt.charts.charts" target="1.8" />
       <module name="app-blockchain-mkt.charts.data" target="1.8" />
+      <module name="app-blockchain-mkt.charts.domain" target="1.8" />
       <module name="app-blockchain-mkt.pools.data" target="1.8" />
       <module name="app-blockchain-mkt.pools.pools" target="1.8" />
       <module name="app-blockchain-mkt.stats.data" target="1.8" />

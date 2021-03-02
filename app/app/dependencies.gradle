@@ -1,6 +1,8 @@
 apply from: "../../libraries.gradle"
 
 dependencies {
+    implementation project(":app:data")
+
     api "androidx.core:core-ktx:$versions.kotlinExt"
 
     api "com.google.dagger:dagger:$versions.dagger"
@@ -14,7 +16,7 @@ dependencies {
     api "androidx.fragment:fragment-ktx:$versions.fragmentExt"
     api "com.google.android.material:material:$versions.material"
 
-    implementation "com.google.dagger:hilt-android:$versions.hilt"
+    api "com.google.dagger:hilt-android:$versions.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$versions.hilt"
 
     api "androidx.navigation:navigation-dynamic-features-fragment:$versions.navigation"

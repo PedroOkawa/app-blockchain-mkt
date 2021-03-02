@@ -2,10 +2,18 @@ apply from: "../../libraries.gradle"
 
 dependencies {
     implementation project(":app:app")
+    implementation project(":charts:data")
+    implementation project(":charts:domain")
 
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+
+    implementation 'com.google.dagger:dagger:2.33'
+    kapt 'com.google.dagger:dagger-compiler:2.33'
+
+    implementation 'com.google.dagger:dagger-android:2.33'
+    kapt 'com.google.dagger:dagger-android-processor:2.33'
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
