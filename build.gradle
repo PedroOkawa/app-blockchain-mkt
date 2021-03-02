@@ -5,6 +5,13 @@ buildscript {
         versions.kotlin = '1.4.31'
         versions.kotlin = '1.4.31'
         versions.kotlin = '1.4.31'
+        versions.kotlin = '1.4.31'
+        versions.kotlin = '1.4.31'
+        versions.kotlin = '1.4.31'
+        versions.kotlin = '1.4.31'
+        versions.kotlin = '1.4.31'
+        versions.kotlin = '1.4.31'
+        versions.kotlin = '1.4.31'
     }
     repositories {
         google()

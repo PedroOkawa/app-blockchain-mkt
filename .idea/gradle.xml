@@ -12,9 +12,20 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app/app" />
+            <option value="$PROJECT_DIR$/app/data" />
             <option value="$PROJECT_DIR$/charts" />
+            <option value="$PROJECT_DIR$/charts/charts" />
+            <option value="$PROJECT_DIR$/charts/data" />
+            <option value="$PROJECT_DIR$/charts/domain" />
             <option value="$PROJECT_DIR$/pools" />
+            <option value="$PROJECT_DIR$/pools/data" />
+            <option value="$PROJECT_DIR$/pools/domain" />
+            <option value="$PROJECT_DIR$/pools/pools" />
             <option value="$PROJECT_DIR$/stats" />
+            <option value="$PROJECT_DIR$/stats/data" />
+            <option value="$PROJECT_DIR$/stats/domain" />
+            <option value="$PROJECT_DIR$/stats/stats" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

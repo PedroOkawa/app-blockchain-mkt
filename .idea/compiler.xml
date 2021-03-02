@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="app-blockchain-mkt.app.app" target="1.8" />
+      <module name="app-blockchain-mkt.app.data" target="1.8" />
+      <module name="app-blockchain-mkt.charts.charts" target="1.8" />
+      <module name="app-blockchain-mkt.charts.data" target="1.8" />
+      <module name="app-blockchain-mkt.pools.data" target="1.8" />
+      <module name="app-blockchain-mkt.pools.pools" target="1.8" />
+      <module name="app-blockchain-mkt.stats.data" target="1.8" />
+      <module name="app-blockchain-mkt.stats.stats" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

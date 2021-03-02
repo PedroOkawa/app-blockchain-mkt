@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_tutorial"
+    app:startDestination="@+id/fragment_tutorial">
+
+    <fragment
+        android:id="@+id/fragment_tutorial"
+        android:name="com.okawa.blockchain.mkt.ui.tutorial.TutorialFragment"
+        android:label="fragment_tutorial"/>
+
+</navigation>
