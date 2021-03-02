@@ -1,0 +1,5 @@
+include ':pools'
+include ':stats'
+include ':charts'
+include ':app'
+rootProject.name = "app-blockchain-mkt"

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#00ACC1</color>
+    <color name="primaryLightColor">#5DDEF4</color>
+    <color name="primaryDarkColor">#007C91</color>
+    <color name="secondaryColor">#B2EBF2</color>
+    <color name="secondaryLightColor">#E5FFFF</color>
+    <color name="secondaryDarkColor">#81B9BF</color>
+    <color name="primaryTextColor">#E0F7fA</color>
+    <color name="secondaryTextColor">#101E23</color>
+
+    <color name="tutorial_page_charts">#0D4F67</color>
+    <color name="tutorial_page_stats">#2D8C59</color>
+    <color name="tutorial_page_pools">#CFBB51</color>
+    <color name="tutorial_page_final">#E86D6D</color>
+</resources>

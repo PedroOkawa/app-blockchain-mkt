@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/nav_pools"
+    app:startDestination="@id/fragment_pools">
+
+    <fragment
+        android:id="@+id/fragment_pools"
+        android:name="com.okawa.blockchain.pools.PoolsFragment"
+        android:label="fragmenet_pools" />
+
+</navigation>
