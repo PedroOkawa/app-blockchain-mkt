@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="chart_pie_label_color">#E5FFFF</color>
+    <color name="chart_pie_first_color">#007C91</color>
+    <color name="chart_pie_second_color">#0D4F67</color>
+    <color name="chart_pie_third_color">#2D8C59</color>
+    <color name="chart_pie_fourth_color">#CFBB51</color>
+    <color name="chart_pie_fifth_color">#E86D6D</color>
+</resources>

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fragment_pools"
-        android:name="com.okawa.blockchain.pools.PoolsFragment"
+        android:name="com.okawa.blockchain.pools.ui.PoolsFragment"
         android:label="fragmenet_pools" />
 
 </navigation>

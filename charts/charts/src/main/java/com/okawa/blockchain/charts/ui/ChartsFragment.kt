@@ -2,7 +2,6 @@ package com.okawa.blockchain.charts.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -75,15 +74,14 @@ class ChartsFragment : Fragment() {
     }
 
     private fun onViewStateError() {
-        Log.w("TEST", "ERROR")
+        //TODO: Implement error message
     }
 
     private fun onViewStateLoading() {
-        Log.w("TEST", "LOADING")
+        //TODO: Implement loading state
     }
 
     private fun onViewStateSuccess(charts: Charts) {
-        Log.w("TEST", "SUCCESS: $charts")
         binding.tvDescription.text = charts.description
 
         val entries = charts.values.mapIndexed { index, value ->
@@ -91,8 +89,8 @@ class ChartsFragment : Fragment() {
         }
 
         val lineDataSet = LineDataSet(entries, charts.name).also { set ->
-            set.color = ContextCompat.getColor(requireContext(), R.color.chartLineColor)
-            set.highLightColor = ContextCompat.getColor(requireContext(), R.color.chartHighlightColor)
+            set.color = ContextCompat.getColor(requireContext(), R.color.chart_line_color)
+            set.highLightColor = ContextCompat.getColor(requireContext(), R.color.chart_line_highlight_color)
             set.axisDependency = YAxis.AxisDependency.LEFT
             set.lineWidth = 2f
             set.setDrawCircles(false)

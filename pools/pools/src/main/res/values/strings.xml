@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pools_description">An estimation of hashrate distribution amongst the largest mining pools.</string>
+    <string name="period_twenty_four_hours">24 Hours</string>
+    <string name="period_forty_eight_hours">48 Hours</string>
+    <string name="period_four_days">4 days</string>
+</resources>

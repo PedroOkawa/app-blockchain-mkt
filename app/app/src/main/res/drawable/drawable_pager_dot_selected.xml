@@ -7,7 +7,7 @@
             android:shape="ring"
             android:thickness="@dimen/pager_dot_size"
             android:useLevel="false">
-            <solid android:color="@color/secondaryTextColor"/>
+            <solid android:color="@color/secondary_text_color"/>
         </shape>
     </item>
 </layer-list>

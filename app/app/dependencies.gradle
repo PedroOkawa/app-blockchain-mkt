@@ -25,6 +25,8 @@ dependencies {
 
     api "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
 
+    api "com.github.PhilJay:MPAndroidChart:$versions.mpAndroidChart"
+
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
     api "com.squareup.moshi:moshi-kotlin:$versions.moshi"
     api "com.squareup.moshi:moshi-adapters:$versions.moshi"

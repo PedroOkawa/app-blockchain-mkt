@@ -1,20 +1,20 @@
-package com.okawa.blockchain.charts.ui
+package com.okawa.blockchain.pools.ui
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import com.okawa.blockchain.charts.model.ChartsPeriod
 import com.okawa.blockchain.mkt.R
 import com.okawa.blockchain.mkt.databinding.AdapterPeriodBinding
+import com.okawa.blockchain.pools.model.PoolsPeriod
 
-class ChartsPeriodAdapter(
+class PoolsPeriodAdapter(
     context: Context
-) : ArrayAdapter<ChartsPeriod>(
+) : ArrayAdapter<PoolsPeriod>(
     context,
     R.layout.adapter_period,
-    ChartsPeriod.values()
+    PoolsPeriod.values()
 ) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -28,7 +28,7 @@ class ChartsPeriodAdapter(
     private fun createView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.adapter_period, parent, false)
         val binding = AdapterPeriodBinding.bind(view)
-        binding.tvTitle.text = context.getString(ChartsPeriod.values()[position].value)
+        binding.tvTitle.text = context.getString(PoolsPeriod.values()[position].value)
         return binding.root
     }
 }

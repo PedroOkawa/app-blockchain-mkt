@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondaryLightColor">
+    android:background="@color/secondary_light_color">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -11,9 +11,9 @@
         android:minHeight="?attr/actionBarSize"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/primaryDarkColor"
+        android:background="@color/primary_dark_color"
         app:title="@string/app_name"
-        app:titleTextColor="@color/primaryTextColor"
+        app:titleTextColor="@color/primary_text_color"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

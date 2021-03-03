@@ -1,7 +1,7 @@
 package com.okawa.blockchain.pools.utils
 
 import com.okawa.blockchain.mkt.di.DaggerDependencies
-import com.okawa.blockchain.pools.PoolsFragment
+import com.okawa.blockchain.pools.ui.PoolsFragment
 import com.okawa.blockchain.pools.di.DaggerPoolsComponent
 import dagger.hilt.android.EntryPointAccessors
 
