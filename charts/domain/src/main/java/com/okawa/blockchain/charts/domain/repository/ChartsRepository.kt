@@ -1,8 +1,9 @@
 package com.okawa.blockchain.charts.domain.repository
 
 import com.okawa.blockchain.charts.domain.model.ChartsDomain
+import kotlinx.coroutines.flow.Flow
 
 interface ChartsRepository {
 
-    suspend fun getCharts(timespan: String): ChartsDomain
+    fun getCharts(timespan: String): Flow<ChartsDomain>
 }

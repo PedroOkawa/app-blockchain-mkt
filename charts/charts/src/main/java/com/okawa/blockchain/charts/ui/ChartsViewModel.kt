@@ -8,20 +8,31 @@ import com.okawa.blockchain.charts.domain.usecase.GetChartsUseCase
 import com.okawa.blockchain.charts.model.Charts
 import com.okawa.blockchain.charts.model.ChartsPeriod
 import com.okawa.blockchain.charts.model.toUi
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
 
 class ChartsViewModel @Inject constructor(
     private val useCase: GetChartsUseCase
 ) : ViewModel() {
 
-    private val _viewState = MutableLiveData<Charts>()
-    val viewState: LiveData<Charts> = _viewState
+    sealed class ViewState {
+        object Error : ViewState()
+        object Loading : ViewState()
+        data class Success(val charts: Charts): ViewState()
+    }
+
+    private val _viewState = MutableLiveData<ViewState>()
+    val viewState: LiveData<ViewState> = _viewState
 
     fun retrieveCharts(chartsPeriod: ChartsPeriod = ChartsPeriod.ONE_MONTH) {
-        viewModelScope.launch {
-            val response = useCase.execute(chartsPeriod.toDomain()).toUi(chartsPeriod)
-            _viewState.postValue(response)
-        }
+        useCase
+            .execute(chartsPeriod.toDomain())
+            .onStart { _viewState.postValue(ViewState.Loading) }
+            .onEach { _viewState.postValue(ViewState.Success(it.toUi())) }
+            .catch { _viewState.postValue(ViewState.Error) }
+            .launchIn(viewModelScope)
     }
 }

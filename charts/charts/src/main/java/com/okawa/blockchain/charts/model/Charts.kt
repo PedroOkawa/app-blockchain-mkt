@@ -13,7 +13,7 @@ data class Charts(
     val values: List<ChartsValue>
 )
 
-fun ChartsDomain.toUi(chartsPeriod: ChartsPeriod): Charts {
+fun ChartsDomain.toUi(): Charts {
     return Charts(
         name = name,
         unit = unit,

@@ -2,6 +2,7 @@ package com.okawa.blockchain.charts.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +14,11 @@ import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.okawa.blockchain.charts.R
 import com.okawa.blockchain.charts.databinding.FragmentChartsBinding
 import com.okawa.blockchain.charts.model.Charts
 import com.okawa.blockchain.charts.model.ChartsPeriod
-import com.okawa.blockchain.mkt.R
 import javax.inject.Inject
-
 
 class ChartsFragment : Fragment() {
 
@@ -50,8 +50,8 @@ class ChartsFragment : Fragment() {
         binding.spPeriod.apply {
             adapter = ChartsPeriodAdapter(requireContext())
             binding.spPeriod.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
-                    val period: ChartsPeriod = parent.getItemAtPosition(pos) as ChartsPeriod
+                override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                    val period: ChartsPeriod = parent.getItemAtPosition(position) as ChartsPeriod
                     viewModel.retrieveCharts(period)
                 }
 
@@ -65,7 +65,24 @@ class ChartsFragment : Fragment() {
         viewModel.viewState.observe(viewLifecycleOwner, { onViewState(it) })
     }
 
-    private fun onViewState(charts: Charts) {
+    private fun onViewState(viewState: ChartsViewModel.ViewState) {
+        when (viewState) {
+            is ChartsViewModel.ViewState.Error -> onViewStateError()
+            is ChartsViewModel.ViewState.Loading -> onViewStateLoading()
+            is ChartsViewModel.ViewState.Success -> onViewStateSuccess(viewState.charts)
+        }
+    }
+
+    private fun onViewStateError() {
+        Log.w("TEST", "ERROR")
+    }
+
+    private fun onViewStateLoading() {
+        Log.w("TEST", "LOADING")
+    }
+
+    private fun onViewStateSuccess(charts: Charts) {
+        Log.w("TEST", "SUCCESS: $charts")
         binding.tvDescription.text = charts.description
 
         val entries = charts.values.mapIndexed { index, value ->
@@ -73,12 +90,12 @@ class ChartsFragment : Fragment() {
         }
 
         val lineDataSet = LineDataSet(entries, charts.name).also { set ->
+            set.color = ContextCompat.getColor(requireContext(), R.color.chartLineColor)
+            set.highLightColor = ContextCompat.getColor(requireContext(), R.color.chartHighlightColor)
             set.axisDependency = YAxis.AxisDependency.LEFT
-            set.color = ContextCompat.getColor(requireContext(), R.color.secondaryTextColor)
+            set.lineWidth = 2f
             set.setDrawCircles(false)
             set.setDrawValues(false)
-            set.lineWidth = 2f
-            set.highLightColor = ContextCompat.getColor(requireContext(), R.color.primaryDarkColor)
             set.setDrawCircleHole(false)
         }
         val lineData = LineData(lineDataSet)
