@@ -1,10 +1,9 @@
 package com.okawa.blockchain.charts.data.model
 
-import com.okawa.blockchain.charts.domain.ChartsDomain
-import com.okawa.blockchain.charts.domain.ChartsValueDomain
+import com.okawa.blockchain.charts.domain.model.ChartsDomain
+import com.okawa.blockchain.charts.domain.model.ChartsValueDomain
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import java.util.*
 
 @JsonClass(generateAdapter = true)
 data class ChartsEntity(
@@ -37,11 +36,11 @@ data class ChartsValueEntity(
     @Json(name = "x")
     val timestamp: Long,
     @Json(name = "y")
-    val value: Double
+    val value: Float
 ) {
     fun toDomain(): ChartsValueDomain {
         return ChartsValueDomain(
-            time = Date(timestamp),
+            timestamp = timestamp,
             value = value
         )
     }

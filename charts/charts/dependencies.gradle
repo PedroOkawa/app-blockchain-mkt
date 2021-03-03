@@ -5,15 +5,13 @@ dependencies {
     implementation project(":charts:data")
     implementation project(":charts:domain")
 
+    implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
+
+    implementation "com.google.dagger:dagger-android:$versions.dagger"
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
 
-    implementation 'com.google.dagger:dagger:2.33'
-    kapt 'com.google.dagger:dagger-compiler:2.33'
-
-    implementation 'com.google.dagger:dagger-android:2.33'
-    kapt 'com.google.dagger:dagger-android-processor:2.33'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

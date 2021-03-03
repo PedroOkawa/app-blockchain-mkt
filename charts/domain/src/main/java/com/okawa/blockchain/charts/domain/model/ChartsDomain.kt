@@ -1,6 +1,4 @@
-package com.okawa.blockchain.charts.domain
-
-import java.util.*
+package com.okawa.blockchain.charts.domain.model
 
 data class ChartsDomain(
     val name: String,
@@ -11,6 +9,6 @@ data class ChartsDomain(
 )
 
 data class ChartsValueDomain(
-    val time: Date,
-    val value: Double
+    val timestamp: Long,
+    val value: Float
 )

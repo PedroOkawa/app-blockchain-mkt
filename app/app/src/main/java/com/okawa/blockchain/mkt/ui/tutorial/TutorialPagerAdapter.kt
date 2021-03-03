@@ -19,7 +19,7 @@ class TutorialPagerAdapter(
             TutorialPage.PAGE_CHARTS -> Pair(R.drawable.ic_chart_24, R.string.tutorial_description_charts)
             TutorialPage.PAGE_STATS -> Pair(R.drawable.ic_stats_24, R.string.tutorial_description_stats)
             TutorialPage.PAGE_POOLS -> Pair(R.drawable.ic_pools_24, R.string.tutorial_description_pools)
-            TutorialPage.PAGE_FINAL -> Pair(R.drawable.ic_chart_24, R.string.tutorial_description_final)
+            TutorialPage.PAGE_FINAL -> Pair(R.drawable.ic_check_24, R.string.tutorial_description_final)
             else -> throw IllegalStateException()
         }
 

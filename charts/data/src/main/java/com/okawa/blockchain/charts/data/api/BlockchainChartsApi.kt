@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface BlockchainChartsApi {
 
-    @GET("charts/transactions-per-second")
+    @GET("charts/transactions-per-second?rollingAverage=24hours")
     suspend fun getCharts(
         @Query(value = "timespan")
         timespan: String

@@ -8,10 +8,9 @@
     tools:background="@color/primaryColor">
 
     <ImageView
-        android:id="@+id/tv_preview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="24dp"
+        android:id="@+id/iv_preview"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
         android:scaleType="fitCenter"
         android:contentDescription="@null"
         app:layout_constraintStart_toStartOf="parent"

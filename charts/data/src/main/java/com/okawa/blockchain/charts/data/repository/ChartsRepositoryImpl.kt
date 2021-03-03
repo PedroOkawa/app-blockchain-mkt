@@ -1,8 +1,8 @@
 package com.okawa.blockchain.charts.data.repository
 
 import com.okawa.blockchain.charts.data.api.BlockchainChartsApi
-import com.okawa.blockchain.charts.domain.ChartsDomain
-import com.okawa.blockchain.charts.domain.ChartsRepository
+import com.okawa.blockchain.charts.domain.model.ChartsDomain
+import com.okawa.blockchain.charts.domain.repository.ChartsRepository
 import javax.inject.Inject
 
 class ChartsRepositoryImpl @Inject constructor(

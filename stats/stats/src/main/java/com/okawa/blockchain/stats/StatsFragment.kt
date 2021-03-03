@@ -15,7 +15,7 @@ class StatsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentStatsBinding.inflate(inflater, container, false)
         return binding.root
     }

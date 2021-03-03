@@ -1,7 +1,8 @@
 package com.okawa.blockchain.charts.model
 
-import com.okawa.blockchain.charts.domain.ChartsDomain
-import com.okawa.blockchain.charts.domain.ChartsValueDomain
+import com.okawa.blockchain.charts.domain.model.ChartsDomain
+import com.okawa.blockchain.charts.domain.model.ChartsValueDomain
+import java.text.SimpleDateFormat
 import java.util.*
 
 data class Charts(
@@ -12,7 +13,7 @@ data class Charts(
     val values: List<ChartsValue>
 )
 
-fun ChartsDomain.toUi(): Charts {
+fun ChartsDomain.toUi(chartsPeriod: ChartsPeriod): Charts {
     return Charts(
         name = name,
         unit = unit,
@@ -23,13 +24,14 @@ fun ChartsDomain.toUi(): Charts {
 }
 
 data class ChartsValue(
-    val time: Date,
-    val value: Double
+    val timestamp: String,
+    val value: Float
 )
 
 fun ChartsValueDomain.toUi(): ChartsValue {
+    val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
     return ChartsValue(
-        time = time,
+        timestamp = formatter.format(Date((timestamp * 1000))),
         value = value
     )
 }

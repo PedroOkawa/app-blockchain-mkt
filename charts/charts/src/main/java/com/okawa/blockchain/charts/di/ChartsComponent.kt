@@ -3,7 +3,7 @@ package com.okawa.blockchain.charts.di
 import android.content.Context
 import com.okawa.blockchain.charts.data.di.ChartsApiModule
 import com.okawa.blockchain.charts.data.di.ChartsRepositoryModule
-import com.okawa.blockchain.charts.domain.ChartsUseCaseModule
+import com.okawa.blockchain.charts.domain.di.ChartsUseCaseModule
 import com.okawa.blockchain.charts.ui.ChartsFragment
 import com.okawa.blockchain.mkt.di.DaggerDependencies
 import dagger.BindsInstance

@@ -1,7 +1,7 @@
 package com.okawa.blockchain.charts.data.di
 
 import com.okawa.blockchain.charts.data.repository.ChartsRepositoryImpl
-import com.okawa.blockchain.charts.domain.ChartsRepository
+import com.okawa.blockchain.charts.domain.repository.ChartsRepository
 import dagger.Binds
 import dagger.Module
 

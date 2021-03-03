@@ -45,6 +45,7 @@ class TutorialPageFragment : Fragment() {
         val imageRes = requireArguments().getInt(TUTORIAL_PAGE_IMAGE)
         val descriptionRes = requireArguments().getInt(TUTORIAL_PAGE_DESCRIPTION)
 
+        binding.ivPreview.setImageResource(imageRes)
         binding.tvDescription.setText(descriptionRes)
     }
 }

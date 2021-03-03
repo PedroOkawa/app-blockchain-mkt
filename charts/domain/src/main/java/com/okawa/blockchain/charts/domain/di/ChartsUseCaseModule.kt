@@ -1,5 +1,7 @@
-package com.okawa.blockchain.charts.domain
+package com.okawa.blockchain.charts.domain.di
 
+import com.okawa.blockchain.charts.domain.repository.ChartsRepository
+import com.okawa.blockchain.charts.domain.usecase.GetChartsUseCase
 import dagger.Module
 import dagger.Provides
 

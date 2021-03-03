@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="period_one_week">One week</string>
+    <string name="period_one_month">One month</string>
+    <string name="period_one_year">One year</string>
+    <string name="period_three_years">Three years</string>
+</resources>
