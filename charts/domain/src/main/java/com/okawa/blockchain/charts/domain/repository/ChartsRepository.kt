@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface ChartsRepository {
 
-    fun getCharts(timespan: String): Flow<ChartsDomain>
+    fun getCharts(timespan: String, rollingAverage: String): Flow<ChartsDomain>
 }

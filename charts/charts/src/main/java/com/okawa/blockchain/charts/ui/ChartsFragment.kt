@@ -18,6 +18,7 @@ import com.okawa.blockchain.charts.R
 import com.okawa.blockchain.charts.databinding.FragmentChartsBinding
 import com.okawa.blockchain.charts.model.Charts
 import com.okawa.blockchain.charts.model.ChartsPeriod
+import com.okawa.blockchain.charts.utils.inject
 import javax.inject.Inject
 
 class ChartsFragment : Fragment() {

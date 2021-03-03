@@ -2,6 +2,8 @@ apply from: "../../libraries.gradle"
 
 dependencies {
     implementation project(":app:app")
+    implementation project(":pools:data")
+    implementation project(":pools:domain")
 
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"

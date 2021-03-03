@@ -1,11 +1,12 @@
-package com.okawa.blockchain.charts.ui
+package com.okawa.blockchain.pools.utils
 
-import com.okawa.blockchain.charts.di.DaggerChartsComponent
 import com.okawa.blockchain.mkt.di.DaggerDependencies
+import com.okawa.blockchain.pools.PoolsFragment
+import com.okawa.blockchain.pools.di.DaggerPoolsComponent
 import dagger.hilt.android.EntryPointAccessors
 
-internal fun ChartsFragment.inject() {
-    DaggerChartsComponent
+internal fun PoolsFragment.inject() {
+    DaggerPoolsComponent
         .builder()
         .context(requireContext())
         .appDependencies(

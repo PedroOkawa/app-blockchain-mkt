@@ -11,9 +11,9 @@ class ChartsRepositoryImpl @Inject constructor(
     private val blockchainChartsApi: BlockchainChartsApi
 ): ChartsRepository {
 
-    override fun getCharts(timespan: String): Flow<ChartsDomain> {
+    override fun getCharts(timespan: String, rollingAverage: String): Flow<ChartsDomain> {
         return flow {
-            val result = blockchainChartsApi.getCharts(timespan).toDomain()
+            val result = blockchainChartsApi.getCharts(timespan, rollingAverage).toDomain()
             emit(result)
         }
     }
