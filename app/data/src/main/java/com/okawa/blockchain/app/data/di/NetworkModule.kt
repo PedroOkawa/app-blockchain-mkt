@@ -1,5 +1,6 @@
-package com.okawa.blockchain.app.data
+package com.okawa.blockchain.app.data.di
 
+import com.okawa.blockchain.app.data.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import dagger.Module
