@@ -4,8 +4,16 @@
         <item name="fontFamily">@font/montserrat</item>
     </style>
 
+    <style name="BaseText.Body">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BaseText.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="BaseText.Toolbar">
-        <item name="fontFamily">@font/montserrat</item>
         <item name="android:textColor">@color/primary_text_color</item>
     </style>
 

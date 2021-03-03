@@ -18,6 +18,8 @@ import com.okawa.blockchain.pools.databinding.FragmentPoolsBinding
 import com.okawa.blockchain.pools.model.Pools
 import com.okawa.blockchain.pools.model.PoolsPeriod
 import com.okawa.blockchain.pools.ui.PoolsViewModel.ViewState
+import com.okawa.blockchain.pools.utils.getGraphDataColors
+import com.okawa.blockchain.pools.utils.getGraphLabelColor
 import com.okawa.blockchain.pools.utils.inject
 import javax.inject.Inject
 
@@ -48,13 +50,21 @@ class PoolsFragment : Fragment() {
     }
 
     private fun setupViews() {
+        setupChart()
+        setupSpinner()
+    }
+
+    private fun setupChart() {
         binding.lcContent.apply {
-            setEntryLabelColor(ContextCompat.getColor(requireContext(), R.color.chart_pie_label_color))
+            setEntryLabelColor(getGraphLabelColor())
             legend.isEnabled = false
             description.isEnabled = false
             setDrawCenterText(true)
             setUsePercentValues(true)
         }
+    }
+
+    private fun setupSpinner() {
         binding.spPeriod.apply {
             adapter = PoolsPeriodAdapter(requireContext())
             binding.spPeriod.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
@@ -100,13 +110,7 @@ class PoolsFragment : Fragment() {
         }
 
         val pieDataSet = PieDataSet(entries, "").also { set ->
-            set.colors = listOf(
-                    ContextCompat.getColor(requireContext(), R.color.chart_pie_first_color),
-                    ContextCompat.getColor(requireContext(), R.color.chart_pie_second_color),
-                    ContextCompat.getColor(requireContext(), R.color.chart_pie_third_color),
-                    ContextCompat.getColor(requireContext(), R.color.chart_pie_fourth_color),
-                    ContextCompat.getColor(requireContext(), R.color.chart_pie_fifth_color)
-            )
+            set.colors = getGraphDataColors()
             set.setDrawIcons(false)
             set.sliceSpace = 2f
         }

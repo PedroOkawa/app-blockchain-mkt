@@ -6,17 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import com.okawa.blockchain.charts.R
 import com.okawa.blockchain.charts.databinding.FragmentChartsBinding
 import com.okawa.blockchain.charts.model.Charts
 import com.okawa.blockchain.charts.model.ChartsPeriod
+import com.okawa.blockchain.charts.utils.getGraphDataHightlightColor
+import com.okawa.blockchain.charts.utils.getGraphDataSetColor
 import com.okawa.blockchain.charts.utils.inject
 import javax.inject.Inject
 
@@ -46,7 +46,15 @@ class ChartsFragment : Fragment() {
     }
 
     private fun setupViews() {
+        setupChart()
+        setupSpinner()
+    }
+
+    private fun setupChart() {
         binding.lcContent.description.isEnabled = false
+    }
+
+    private fun setupSpinner() {
         binding.spPeriod.apply {
             adapter = ChartsPeriodAdapter(requireContext())
             binding.spPeriod.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
@@ -89,8 +97,8 @@ class ChartsFragment : Fragment() {
         }
 
         val lineDataSet = LineDataSet(entries, charts.name).also { set ->
-            set.color = ContextCompat.getColor(requireContext(), R.color.chart_line_color)
-            set.highLightColor = ContextCompat.getColor(requireContext(), R.color.chart_line_highlight_color)
+            set.color = getGraphDataSetColor()
+            set.highLightColor = getGraphDataHightlightColor()
             set.axisDependency = YAxis.AxisDependency.LEFT
             set.lineWidth = 2f
             set.setDrawCircles(false)
