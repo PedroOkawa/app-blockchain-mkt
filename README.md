@@ -4,12 +4,12 @@
 This application focus on using dynamic feature along with Hilt / Dagger2 to request Blockchain data.
 
 ## :package: Architecture organization
-The project is based on clean architecure with a clear separation among the Data, Domain and UI layers
+The project is based on a clean architecture with clear separation among the Data, Domain, and UI layers
 
 - app-blockchain-mkt
     - app
         - app (UI / Main)
-        - data (It is centralized data module to be used buy the other data layers)
+        - data (It is a centralized data module to be used by the other data layers)
     - charts
         - charts (UI)
         - data (Repository)
@@ -27,9 +27,9 @@ PS: All mentioned packages contains unit test coverage except the `app/app/data`
 
 ## :floppy_disk: Tech-stack
 The code is mainly based on the following concepts/libraries:
-* Clean architecure
+* Clean architecture
 * MVVM
-* Dynamic features (Charts, Pools and Stats are each one dynamic features)
+* Dynamic features (Charts, Pools, and Stats are each one dynamic feature)
 * Dependency injection with Hilt (app module) and Dagger2 (feature modules)
 * Coroutines (Data, Domain and View model layers)
 * LiveData (View model / fragment)
