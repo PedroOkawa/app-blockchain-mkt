@@ -24,6 +24,6 @@ Complete successful flow  |
 
 ---
 
-Loading             |  Error
+Error             |  Loading
 :-------------------------:|:-------------------------:
-<img src="/preview/preview_loading.gif" width="260">  |  <img src="/preview/preview_error.gif" width="260">
+<img src="/preview/preview_error.gif" width="260">  |  <img src="/preview/preview_loading.gif" width="260">
