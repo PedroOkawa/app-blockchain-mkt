@@ -12,7 +12,7 @@ The code is mainly based on the following concepts/libraries:
 * Coroutines (Data, Domain and View model layers)
 * LiveData (View model / fragment)
 * MPAndroidChart (Graphs and charts)
-* Lottie for some animations
+* Animations using Lottie
 * And unit testing using JUnit, Jupiter and mockk
 
 
