@@ -3,7 +3,7 @@
 ## :scroll: Description
 This application focus on using dynamic feature along with Hilt / Dagger2 to request Blockchain data.
 
-## :package: Architecture organization
+## :package: Package organization
 The project is based on a clean architecture with clear separation among the Data, Domain, and UI layers
 
 - app-blockchain-mkt
@@ -24,6 +24,11 @@ The project is based on a clean architecture with clear separation among the Dat
         - stats (UI)
 
 PS: All mentioned packages contains unit test coverage except the `app-blockchain-mkt/app/data`
+
+## :building_construction: Architecture
+
+<img src="/preview/diagram.png">
+
 
 ## :floppy_disk: Tech-stack
 The code is mainly based on the following concepts/libraries:
