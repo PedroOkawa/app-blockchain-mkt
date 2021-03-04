@@ -1,0 +1,7 @@
+apply from: "../libraries.gradle"
+
+dependencies {
+    implementation "junit:junit:$versions.junit"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
+    implementation "org.junit.jupiter:junit-jupiter-api:$versions.junitJupiter"
+}

@@ -1,7 +1,6 @@
 plugins {
-    id 'com.android.dynamic-feature'
+    id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
 
 apply from: "dependencies.gradle"
@@ -11,17 +10,15 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.okawa.blockchain.pools"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
-    buildFeatures {
-        viewBinding true
-    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,18 +29,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kapt {
-        correctErrorTypes true
-    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
     sourceSets{
         main.java.srcDirs += 'src/main/kotlin/'
-        test.java.srcDirs += 'src/test/kotlin/'
-        androidTest.java.srcDirs += 'src/androidTest/kotlin/'
-    }
-    testOptions {
-        unitTests.returnDefaultValues = true
     }
 }

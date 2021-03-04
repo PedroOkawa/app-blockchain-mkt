@@ -37,7 +37,7 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:$versions.retrofit"
     api "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
 
-    testImplementation "junit:junit:$versions.junit"
+    api project(":testutils")
 
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
 }

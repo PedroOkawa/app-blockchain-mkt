@@ -1,4 +1,5 @@
 ext.versions =  [
+        coreTesting: "2.1.0",
         coroutines: "1.4.2",
         dagger: "2.33",
         espresso: "3.3.0",

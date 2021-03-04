@@ -21,6 +21,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    applicationVariants.all { variant ->
+        variant.getCompileConfiguration().exclude module: 'testutils'
+        variant.getRuntimeConfiguration().exclude module: 'testutils'
+    }
     buildFeatures {
         viewBinding true
     }
