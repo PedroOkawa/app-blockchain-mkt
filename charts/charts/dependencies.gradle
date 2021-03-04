@@ -9,7 +9,10 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
 
     testImplementation "junit:junit:$versions.junit"
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation 'androidx.annotation:annotation:1.1.0'
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
 }
