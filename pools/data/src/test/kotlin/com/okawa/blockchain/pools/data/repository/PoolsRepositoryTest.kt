@@ -13,7 +13,7 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test
 import org.junit.jupiter.api.assertThrows
 
-private const val ARGUMENT_TIME_SPAN = "1day"
+private const val ARGUMENT_TIME_SPAN = "4days"
 
 @ExperimentalCoroutinesApi
 class PoolsRepositoryTest {
@@ -22,7 +22,7 @@ class PoolsRepositoryTest {
     private val poolsRepository: PoolsRepository = PoolsRepositoryImpl(blockchainPoolsApi)
 
     @Test
-    fun `GIVEN successful result WHEN user requests pools THEN return flow with pools domain model`() {
+    fun `GIVEN successful result WHEN requests pools on repository THEN return flow with pools domain model`() {
         val poolsEntity = mapOf(
             "GHash.IO" to  7,
             "95.128.48.209" to  1,

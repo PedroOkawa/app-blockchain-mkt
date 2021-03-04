@@ -13,7 +13,7 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test
 import org.junit.jupiter.api.assertThrows
 
-private const val ARGUMENT_TIME_SPAN = "1day"
+private const val ARGUMENT_TIME_SPAN = "7days"
 private const val ARGUMENT_ROLLING_AVERAGE = "8hours"
 
 @ExperimentalCoroutinesApi
@@ -23,7 +23,7 @@ class ChartsRepositoryTest {
     private val chartsRepository: ChartsRepository = ChartsRepositoryImpl(blockchainChartsApi)
 
     @Test
-    fun `GIVEN successful result WHEN user requests charts THEN return flow with charts domain model`() {
+    fun `GIVEN successful result WHEN requests charts on repository THEN return flow with charts domain model`() {
         val chartsEntity = ChartsEntity(
             status = "OK",
             name = "Chart name",

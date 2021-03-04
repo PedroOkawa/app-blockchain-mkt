@@ -1,27 +1,27 @@
-package com.okawa.blockchain.stats.data
+package com.okawa.blockchain.stats.domain.usecase
 
 import com.google.common.truth.Truth
-import com.okawa.blockchain.stats.data.api.BlockchainStatsApi
-import com.okawa.blockchain.stats.data.model.StatsEntity
-import com.okawa.blockchain.stats.data.repository.StatsRepositoryImpl
+import com.okawa.blockchain.stats.domain.model.StatsDomain
 import com.okawa.blockchain.stats.domain.repository.StatsRepository
-import io.mockk.coEvery
+import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 @ExperimentalCoroutinesApi
-class PoolsRepositoryTest {
+class GetStatsUseCaseTest {
 
-    private val blockchainStatsApi: BlockchainStatsApi = mockk()
-    private val statsRepository: StatsRepository =  StatsRepositoryImpl(blockchainStatsApi)
+    private val statsRepository: StatsRepository = mockk()
+    private val getStatsUseCase: GetStatsUseCase = GetStatsUseCase(statsRepository)
 
     @Test
-    fun `GIVEN successful result WHEN requests stats on repository THEN return flow with stats domain model`() {
-        val statsEntity = StatsEntity(
+    fun `GIVEN successful result WHEN requests stats usecase THEN return stats`() {
+        val statsDomain = StatsDomain(
             marketPriceUsd = 1.0,
             hashRate = 1.0,
             totalFeesBtc = 100L,
@@ -43,23 +43,22 @@ class PoolsRepositoryTest {
             timestamp = 1300L
         )
 
-        val expectedResult = statsEntity.toDomain()
-        coEvery { blockchainStatsApi.getStats() } returns statsEntity
+        every { statsRepository.getStats() } returns flowOf(statsDomain)
 
         runBlockingTest {
-            statsRepository.getStats().collect { result ->
-                Truth.assertThat(result).isEqualTo(expectedResult)
+            getStatsUseCase.execute().collect { result ->
+                Truth.assertThat(result).isEqualTo(statsDomain)
             }
         }
     }
 
     @Test
-    fun `GIVEN failure result WHEN user requests stats THEN return flow with exception`() {
-        coEvery { blockchainStatsApi.getStats() } throws Exception()
+    fun `GIVEN failure result WHEN requests stats usecase THEN return flow with exception`() {
+        every { statsRepository.getStats() } returns flow { throw Exception() }
 
         assertThrows<Exception> {
             runBlockingTest {
-                statsRepository.getStats().collect()
+                getStatsUseCase.execute().collect()
             }
         }
     }
