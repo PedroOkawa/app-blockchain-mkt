@@ -2,10 +2,13 @@ apply from: "../../libraries.gradle"
 
 dependencies {
     implementation project(":app:app")
+    implementation project(":stats:data")
+    implementation project(":stats:domain")
 
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01"
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

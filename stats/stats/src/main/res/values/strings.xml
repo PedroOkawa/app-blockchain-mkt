@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="stats_block_summary_title">Block summary</string>
+    <string name="stats_blocks_mined_title">Blocks mined</string>
+    <string name="stats_minutes_between_blocks_title">Minutes between blocks</string>
+    <string name="stats_bitcions_mined_title">Bitcions mined</string>
+
+    <string name="stats_market_summary_title">Market summary</string>
+    <string name="stats_market_price_title">Market price</string>
+    <string name="stats_trade_volume_dollar_title">Trade volume (USD)</string>
+    <string name="stats_trade_volume_bitcoin_title">Trade volume (BTC)</string>
+
+    <string name="stats_transaction_summary_title">Transaction summary</string>
+    <string name="stats_total_transaction_fee_bitcoin_title">TTF¹ (BTC)</string>
+    <string name="stats_number_transactions_title">Number of Transactions</string>
+    <string name="stats_total_output_volume_title">TOV² (BTC)</string>
+    <string name="stats_estimated_transaction_volume_bitcoin_title">ETV³ (BTC)</string>
+    <string name="stats_estimated_transaction_volume_dollar_title">ETV³ (USD)</string>
+    <string name="stats_total_transaction_fee_bitcoin_caption">¹Total Transaction Fees</string>
+    <string name="stats_total_output_volume_caption">²Total Output Volume</string>
+    <string name="stats_estimated_transaction_volume_caption">³Estimated Transaction Value</string>
+
+    <string name="stats_mining_cost_summary_title">Mining cost summary</string>
+    <string name="stats_total_miners_revenue_dollar_title">TMR¹ (USD)</string>
+    <string name="stats_total_miners_revenue_bitcoin_title">TMR¹ (BTC)</string>
+    <string name="stats_total_miners_revenue_caption">¹Total Miners Revenue</string>
+
+    <string name="bitcions_value">%s BTC</string>
+
+</resources>

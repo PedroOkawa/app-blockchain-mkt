@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun setupViews() {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.content) as DynamicNavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.vp_content) as DynamicNavHostFragment
         val navController = navHostFragment.navController
         binding.bottomMenu.setupWithNavController(navController)
     }

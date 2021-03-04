@@ -36,14 +36,14 @@ class TutorialFragment : Fragment() {
     }
 
     private fun setupViews() {
-        binding.content.adapter = TutorialPagerAdapter(this)
-        binding.content.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        binding.vpContent.adapter = TutorialPagerAdapter(this)
+        binding.vpContent.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 viewModel.onPageSelected(position)
             }
         })
-        TabLayoutMediator(binding.indicator, binding.content) { _, _ -> }.attach()
+        TabLayoutMediator(binding.tlIndicator, binding.vpContent) { _, _ -> }.attach()
     }
 
     private fun setupListeners() {
@@ -62,7 +62,6 @@ class TutorialFragment : Fragment() {
 
         setStatusBarColor(color)
         binding.root.setBackgroundColor(color)
-        binding.indicator.setBackgroundColor(color)
         binding.btClose.visibility = if (viewState.isLastPage) View.VISIBLE else View.GONE
     }
 

@@ -23,10 +23,10 @@ class TutorialViewModel : ViewModel() {
 
     fun onPageSelected(position: Int) {
         @ColorRes val color = when (position) {
-            TutorialPage.PAGE_CHARTS -> R.color.tutorial_page_charts
-            TutorialPage.PAGE_STATS -> R.color.tutorial_page_stats
-            TutorialPage.PAGE_POOLS -> R.color.tutorial_page_pools
-            TutorialPage.PAGE_FINAL -> R.color.tutorial_page_final
+            TutorialPage.PAGE_STATS -> R.color.tutorial_page_stats_color
+            TutorialPage.PAGE_CHARTS -> R.color.tutorial_page_charts_color
+            TutorialPage.PAGE_POOLS -> R.color.tutorial_page_pools_color
+            TutorialPage.PAGE_FINAL -> R.color.tutorial_page_final_color
             else -> throw IllegalStateException()
         }
 

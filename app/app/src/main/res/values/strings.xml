@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Blockchain Mkt</string>
-    <string name="title_charts">Charts</string>
     <string name="title_stats">Stats</string>
+    <string name="title_charts">Charts</string>
     <string name="title_pools">Pools</string>
-    <string name="tutorial_description_charts">Check Blockchain charts…</string>
-    <string name="tutorial_description_stats">Stats…</string>
+
+    <string name="tutorial_description_stats">Check Blockchain stats…</string>
+    <string name="tutorial_description_charts">Charts…</string>
     <string name="tutorial_description_pools">… and Pools</string>
-    <string name="tutorial_description_final">Enjoy</string>
+    <string name="tutorial_description_final">Enjoy!</string>
     <string name="tutorial_button_close">Close</string>
 </resources>

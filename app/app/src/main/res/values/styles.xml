@@ -4,6 +4,10 @@
         <item name="fontFamily">@font/montserrat</item>
     </style>
 
+    <style name="BaseText.Caption">
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="BaseText.Body">
         <item name="android:textSize">14sp</item>
     </style>
@@ -11,6 +15,11 @@
     <style name="BaseText.Title">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BaseText.Header">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="BaseText.Toolbar">

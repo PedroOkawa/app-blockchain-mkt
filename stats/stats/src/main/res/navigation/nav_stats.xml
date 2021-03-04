@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fragment_stats"
-        android:name="com.okawa.blockchain.stats.StatsFragment"
+        android:name="com.okawa.blockchain.stats.ui.StatsFragment"
         android:label="fragment_stats" />
 
 </navigation>

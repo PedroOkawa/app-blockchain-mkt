@@ -5,10 +5,7 @@ dependencies {
     implementation project(":pools:data")
     implementation project(":pools:domain")
 
-    implementation "com.google.dagger:dagger:$versions.dagger"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger"
-
-    implementation "com.google.dagger:dagger-android:$versions.dagger"
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
 
     testImplementation "junit:junit:$versions.junit"

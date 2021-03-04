@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@id/nav_charts"
-        android:enabled="true"
-        android:icon="@drawable/ic_chart_24"
-        android:title="@string/title_charts"/>
-    <item
         android:id="@+id/nav_stats"
         android:enabled="true"
         android:icon="@drawable/ic_stats_24"
         android:title="@string/title_stats"/>
+    <item
+        android:id="@id/nav_charts"
+        android:enabled="true"
+        android:icon="@drawable/ic_chart_24"
+        android:title="@string/title_charts"/>
     <item
         android:id="@+id/nav_pools"
         android:enabled="true"

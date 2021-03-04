@@ -5,9 +5,9 @@
         <shape
             android:innerRadius="0dp"
             android:shape="ring"
-            android:thickness="@dimen/pager_dot_size"
+            android:thickness="@dimen/tutorial_pager_dot_size"
             android:useLevel="false">
-            <solid android:color="@color/secondary_text_color"/>
+            <solid android:color="@color/tab_indicator_selected_color"/>
         </shape>
     </item>
 </layer-list>

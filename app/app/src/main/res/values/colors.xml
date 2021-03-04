@@ -6,11 +6,14 @@
     <color name="secondary_color">#B2EBF2</color>
     <color name="secondary_light_color">#E5FFFF</color>
     <color name="secondary_dark_color">#81B9BF</color>
-    <color name="primary_text_color">#E0F7fA</color>
+    <color name="primary_text_color">#E0F7FA</color>
     <color name="secondary_text_color">#101E23</color>
 
-    <color name="tutorial_page_charts">#0D4F67</color>
-    <color name="tutorial_page_stats">#2D8C59</color>
-    <color name="tutorial_page_pools">#CFBB51</color>
-    <color name="tutorial_page_final">#E86D6D</color>
+    <color name="tab_indicator_selected_color">#E0F7FA</color>
+    <color name="tab_indicator_unselected_color">#77101E23</color>
+
+    <color name="tutorial_page_stats_color">#E86D6D</color>
+    <color name="tutorial_page_charts_color">#0D4F67</color>
+    <color name="tutorial_page_pools_color">#CFBB51</color>
+    <color name="tutorial_page_final_color">#2D8C59</color>
 </resources>

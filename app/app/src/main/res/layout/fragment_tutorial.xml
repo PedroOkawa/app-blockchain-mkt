@@ -8,17 +8,17 @@
     tools:background="@color/primary_color">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/content"
+        android:id="@+id/vp_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/indicator"
+        app:layout_constraintBottom_toTopOf="@id/tl_indicator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:context=".ui.tutorial.TutorialFragment"/>
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/indicator"
+        android:id="@+id/tl_indicator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -37,7 +37,7 @@
         android:background="?android:attr/selectableItemBackground"
         android:text="@string/tutorial_button_close"
         android:visibility="gone"
-        app:layout_constraintTop_toTopOf="@+id/indicator"
+        app:layout_constraintTop_toTopOf="@+id/tl_indicator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
