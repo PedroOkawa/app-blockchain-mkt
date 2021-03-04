@@ -1,6 +1,7 @@
 package com.okawa.blockchain.pools.ui
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,11 +19,8 @@ import com.okawa.blockchain.pools.databinding.FragmentPoolsBinding
 import com.okawa.blockchain.pools.model.Pools
 import com.okawa.blockchain.pools.model.PoolsPeriod
 import com.okawa.blockchain.pools.ui.PoolsViewModel.ViewState
-import com.okawa.blockchain.pools.utils.getGraphDataColors
-import com.okawa.blockchain.pools.utils.getGraphLabelColor
-import com.okawa.blockchain.pools.utils.inject
+import com.okawa.blockchain.pools.utils.*
 import javax.inject.Inject
-
 
 class PoolsFragment : Fragment() {
 
@@ -39,9 +37,9 @@ class PoolsFragment : Fragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         binding = FragmentPoolsBinding.inflate(inflater, container, false)
         setupViews()
@@ -56,9 +54,12 @@ class PoolsFragment : Fragment() {
 
     private fun setupChart() {
         binding.lcContent.apply {
-            setEntryLabelColor(getGraphLabelColor())
             legend.isEnabled = false
             description.isEnabled = false
+            transparentCircleRadius = getGraphTransparentCircleRadius()
+            holeRadius = getGraphHoleRadius()
+            setEntryLabelColor(getGraphLabelColor())
+            setHoleColor(Color.TRANSPARENT)
             setDrawCenterText(true)
             setUsePercentValues(true)
         }
@@ -68,12 +69,7 @@ class PoolsFragment : Fragment() {
         binding.spPeriod.apply {
             adapter = PoolsPeriodAdapter(requireContext())
             binding.spPeriod.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                        parent: AdapterView<*>,
-                        view: View?,
-                        position: Int,
-                        id: Long
-                ) {
+                override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                     val period: PoolsPeriod = parent.getItemAtPosition(position) as PoolsPeriod
                     viewModel.retrievePools(period)
                 }
@@ -97,11 +93,13 @@ class PoolsFragment : Fragment() {
     }
 
     private fun onViewStateError() {
-        //TODO: Implement error message
+        binding.gpContent.visibility = View.GONE
+        binding.laLoading.visibility = View.GONE
     }
 
     private fun onViewStateLoading() {
-        //TODO: Implement loading state
+        binding.gpContent.visibility = View.GONE
+        binding.laLoading.visibility = View.VISIBLE
     }
 
     private fun onViewStateSuccess(pools: Pools) {
@@ -112,7 +110,7 @@ class PoolsFragment : Fragment() {
         val pieDataSet = PieDataSet(entries, "").also { set ->
             set.colors = getGraphDataColors()
             set.setDrawIcons(false)
-            set.sliceSpace = 2f
+            set.sliceSpace = getGraphSliceSpace()
         }
         val pieData = PieData(pieDataSet).also { data ->
             data.setValueTextColor(ContextCompat.getColor(requireContext(), R.color.chart_pie_label_color))
@@ -120,9 +118,11 @@ class PoolsFragment : Fragment() {
             data.setValueTextSize(16f)
         }
 
-        binding.lcContent.apply {
-            data = pieData
-            invalidate()
+        binding.apply {
+            laLoading.visibility = View.GONE
+            gpContent.visibility = View.VISIBLE
+            lcContent.data = pieData
+            lcContent.invalidate()
         }
     }
 }

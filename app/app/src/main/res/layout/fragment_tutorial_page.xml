@@ -25,7 +25,7 @@
         android:textStyle="bold"
         android:layout_height="wrap_content"
         android:textColor="@color/primary_text_color"
-        android:layout_margin="@dimen/spacing_xlarge"
+        android:layout_margin="@dimen/spacing_xxlarge"
         tools:text="@string/tutorial_description_stats"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

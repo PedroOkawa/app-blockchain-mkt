@@ -8,6 +8,8 @@ dependencies {
     api "com.google.dagger:dagger:$versions.dagger"
     api "com.google.dagger:dagger-android:$versions.dagger"
 
+    api "com.airbnb.android:lottie:$versions.lottie"
+
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltViewModel"
     kapt "androidx.hilt:hilt-compiler:$versions.hiltViewModel"
 

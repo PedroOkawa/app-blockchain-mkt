@@ -64,7 +64,7 @@
         <TextView
             android:id="@+id/tv_total_transaction_fees_caption"
             style="@style/BaseText.Caption"
-            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_xlarge"
             android:layout_marginBottom="@dimen/spacing_medium"
             android:layout_marginHorizontal="@dimen/spacing_medium"
             android:layout_width="0dp"

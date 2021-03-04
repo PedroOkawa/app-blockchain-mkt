@@ -82,11 +82,13 @@ class ChartsFragment : Fragment() {
     }
 
     private fun onViewStateError() {
-        //TODO: Implement error message
+        binding.gpContent.visibility = View.GONE
+        binding.laLoading.visibility = View.GONE
     }
 
     private fun onViewStateLoading() {
-        //TODO: Implement loading state
+        binding.gpContent.visibility = View.GONE
+        binding.laLoading.visibility = View.VISIBLE
     }
 
     private fun onViewStateSuccess(charts: Charts) {
@@ -107,9 +109,11 @@ class ChartsFragment : Fragment() {
         }
         val lineData = LineData(lineDataSet)
 
-        binding.lcContent.apply {
-            data = lineData
-            invalidate()
+        binding.apply {
+            laLoading.visibility = View.GONE
+            gpContent.visibility = View.VISIBLE
+            lcContent.data = lineData
+            lcContent.invalidate()
         }
     }
 }

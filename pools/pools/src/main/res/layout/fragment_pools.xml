@@ -18,13 +18,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gp_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="lc_content, tv_description"/>
+
     <Spinner
         android:id="@+id/sp_period"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_large"
+        android:layout_margin="@dimen/spacing_xlarge"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintBottom_toTopOf="@+id/lc_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/la_loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:lottie_fileName="loading.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintTop_toBottomOf="@+id/sp_period"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -32,7 +50,9 @@
         android:id="@+id/lc_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_xxlarge"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
         app:layout_constraintTop_toBottomOf="@+id/sp_period"
         app:layout_constraintBottom_toTopOf="@+id/tv_description"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +63,7 @@
         android:gravity="center_horizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_xlarge"
+        android:layout_margin="@dimen/spacing_xxlarge"
         android:text="@string/pools_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

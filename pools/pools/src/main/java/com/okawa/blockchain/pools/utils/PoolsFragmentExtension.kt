@@ -37,3 +37,15 @@ internal fun PoolsFragment.getGraphDataColors(): List<Int> {
 internal fun PoolsFragment.getGraphLabelColor(): Int {
     return ContextCompat.getColor(requireContext(), R.color.chart_pie_label_color)
 }
+
+internal fun PoolsFragment.getGraphSliceSpace(): Float {
+    return resources.getDimensionPixelSize(com.okawa.blockchain.mkt.R.dimen.spacing_xsmall).toFloat()
+}
+
+internal fun PoolsFragment.getGraphTransparentCircleRadius(): Float {
+    return resources.getDimensionPixelSize(com.okawa.blockchain.mkt.R.dimen.spacing_large).toFloat()
+}
+
+internal fun PoolsFragment.getGraphHoleRadius(): Float {
+    return resources.getDimensionPixelSize(com.okawa.blockchain.mkt.R.dimen.spacing_medium).toFloat()
+}
