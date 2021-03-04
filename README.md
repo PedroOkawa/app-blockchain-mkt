@@ -23,7 +23,7 @@ The project is based on a clean architecture with clear separation among the Dat
         - domain (Business Logic)
         - stats (UI)
 
-PS: All mentioned packages contains unit test coverage except the `app/app/data`
+PS: All mentioned packages contains unit test coverage except the `app-blockchain-mkt/app/data`
 
 ## :floppy_disk: Tech-stack
 The code is mainly based on the following concepts/libraries:
