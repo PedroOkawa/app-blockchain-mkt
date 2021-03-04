@@ -18,12 +18,4 @@ The code is mainly based on the following concepts/libraries:
 
 ## :camera_flash: Preview
 
-Complete successful flow  |
-:-------------------------:|
-<img src="/preview/preview_complete_flow.gif" width="260"> |
-
----
-
-Error             |  Loading
-:-------------------------:|:-------------------------:
-<img src="/preview/preview_error.gif" width="260">  |  <img src="/preview/preview_loading.gif" width="260">
+<img src="/preview/preview_complete_flow.gif" width="260">&emsp;<img src="/preview/preview_error.gif" width="260">
