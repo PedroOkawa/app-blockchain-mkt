@@ -95,11 +95,13 @@ class PoolsFragment : Fragment() {
     private fun onViewStateError() {
         binding.gpContent.visibility = View.GONE
         binding.laLoading.visibility = View.GONE
+        binding.laError.visibility = View.VISIBLE
     }
 
     private fun onViewStateLoading() {
         binding.gpContent.visibility = View.GONE
         binding.laLoading.visibility = View.VISIBLE
+        binding.laError.visibility = View.GONE
     }
 
     private fun onViewStateSuccess(pools: Pools) {
@@ -119,8 +121,9 @@ class PoolsFragment : Fragment() {
         }
 
         binding.apply {
-            laLoading.visibility = View.GONE
             gpContent.visibility = View.VISIBLE
+            laLoading.visibility = View.GONE
+            laError.visibility = View.GONE
             lcContent.data = pieData
             lcContent.invalidate()
         }

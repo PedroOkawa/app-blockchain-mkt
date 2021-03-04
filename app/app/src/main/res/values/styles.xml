@@ -23,6 +23,7 @@
     </style>
 
     <style name="BaseText.Toolbar">
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/primary_text_color</item>
     </style>
 
