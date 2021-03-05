@@ -27,7 +27,7 @@ PS: All mentioned packages contains unit test coverage except the `app-blockchai
 
 ## :building_construction: Architecture
 
-
+<img src="/preview/diagram.png">
 
 ## :floppy_disk: Tech-stack
 The code is mainly based on the following concepts/libraries:
