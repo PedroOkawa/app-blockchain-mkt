@@ -1,17 +1,21 @@
 package com.okawa.blockchain.mkt.ui.tutorial
 
-import androidx.annotation.ColorRes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.okawa.blockchain.mkt.R
 import com.okawa.blockchain.mkt.ui.tutorial.model.TutorialPage
+import com.okawa.blockchain.mkt.utils.ColorProvider
 import com.okawa.blockchain.mkt.utils.SingleLiveEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class TutorialViewModel : ViewModel() {
+@HiltViewModel
+class TutorialViewModel @Inject constructor(
+    private val colorProvider: ColorProvider
+) : ViewModel() {
 
     data class ViewState(
-        @ColorRes val colorRes: Int,
+        val color: Int,
         val isLastPage: Boolean
     )
 
@@ -22,11 +26,11 @@ class TutorialViewModel : ViewModel() {
     val viewState: LiveData<ViewState> = _viewState
 
     fun onPageSelected(position: Int) {
-        @ColorRes val color = when (position) {
-            TutorialPage.PAGE_STATS -> R.color.tutorial_page_stats_color
-            TutorialPage.PAGE_CHARTS -> R.color.tutorial_page_charts_color
-            TutorialPage.PAGE_POOLS -> R.color.tutorial_page_pools_color
-            TutorialPage.PAGE_FINAL -> R.color.tutorial_page_final_color
+        val color = when (position) {
+            TutorialPage.PAGE_STATS -> colorProvider.statsPageColor
+            TutorialPage.PAGE_CHARTS -> colorProvider.chartsPageColor
+            TutorialPage.PAGE_POOLS -> colorProvider.poolsPageColor
+            TutorialPage.PAGE_FINAL -> colorProvider.finalPageColor
             else -> throw IllegalStateException()
         }
 

@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
@@ -16,7 +15,9 @@ import com.okawa.blockchain.mkt.databinding.FragmentTutorialBinding
 import com.okawa.blockchain.mkt.ui.home.HomeActivity
 import com.okawa.blockchain.mkt.utils.debounceClick
 import com.okawa.blockchain.mkt.utils.setStatusBarColor
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TutorialFragment : Fragment() {
 
     private val viewModel: TutorialViewModel by viewModels()
@@ -58,10 +59,8 @@ class TutorialFragment : Fragment() {
     }
 
     private fun onViewState(viewState: TutorialViewModel.ViewState) {
-        val color = ContextCompat.getColor(requireContext(), viewState.colorRes)
-
-        setStatusBarColor(color)
-        binding.root.setBackgroundColor(color)
+        setStatusBarColor(viewState.color)
+        binding.root.setBackgroundColor(viewState.color)
         binding.btClose.visibility = if (viewState.isLastPage) View.VISIBLE else View.GONE
     }
 
