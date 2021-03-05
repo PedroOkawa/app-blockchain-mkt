@@ -1,6 +1,6 @@
-package com.okawa.blockchain.app.data.di
+package com.okawa.blockchain.mkt.di
 
-import com.okawa.blockchain.app.data.BuildConfig
+import com.okawa.blockchain.mkt.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

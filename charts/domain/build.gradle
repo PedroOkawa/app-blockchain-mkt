@@ -4,5 +4,5 @@ plugins {
     id 'kotlin-kapt'
 }
 
-apply from: "../../kotlindomain.gradle"
+apply from: "../../kotlinlibrary.gradle"
 apply from: "dependencies.gradle"

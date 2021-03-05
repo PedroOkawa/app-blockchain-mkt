@@ -1,5 +1,4 @@
 include ':testutils'
-include ':app:data'
 include ':charts:domain'
 include ':charts:data'
 include ':pools:domain'

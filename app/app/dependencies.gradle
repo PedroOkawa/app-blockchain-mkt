@@ -1,8 +1,6 @@
 apply from: "../../libraries.gradle"
 
 dependencies {
-    implementation project(":app:data")
-
     api "androidx.core:core-ktx:$versions.kotlinExt"
 
     api "com.google.dagger:dagger:$versions.dagger"

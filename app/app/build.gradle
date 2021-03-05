@@ -30,9 +30,11 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"https://api.blockchain.info/\""
         }
         release {
             minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"https://api.blockchain.info/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
